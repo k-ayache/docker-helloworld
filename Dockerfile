@@ -5,7 +5,7 @@
 
 
 # Set the base image to Ubuntu
-FROM ubuntu:18.04
+FROM karima/repository:ubuntu
 
 # File Author / Maintainer
 MAINTAINER Karthik Gaekwad
