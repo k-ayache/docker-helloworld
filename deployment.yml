@@ -3,6 +3,7 @@ kind: Deployment
 metadata:
   name: helloworld
   namespace: default
+  serviceAccount: jenkins
 spec:
   selector:
     matchLabels:
@@ -24,13 +25,12 @@ kind: Service
 metadata:
  name: helloworld
 spec:
- type: NodePort
+ type: LoadBalancer
  selector:
    app: helloworld
  ports:
    - name: client
      protocol: TCP
      port: 80
-     nodePort: 32080
  selector:
    app: helloworld
