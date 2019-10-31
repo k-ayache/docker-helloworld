@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: helloworld
   namespace: default
-  serviceAccount: jenkins
+#  serviceAccount: jenkins
 spec:
   selector:
     matchLabels:
@@ -19,7 +19,7 @@ spec:
         image: karima/repository:nginx-1
         ports:
         - containerPort: 80
-      serviceAccount: jenkins
+#      serviceAccountName: jenkins
 ---
 apiVersion: v1
 kind: Service
