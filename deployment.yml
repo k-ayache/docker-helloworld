@@ -2,8 +2,6 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: helloworld
-  namespace: default
-#  serviceAccount: jenkins
 spec:
   selector:
     matchLabels:
@@ -16,10 +14,12 @@ spec:
     spec:
       containers:
       - name: helloworld
-        image: karima/repository:nginx-1
+        image: karima/repository1:nginx-1
+        imagePullPolicy: Always
         ports:
         - containerPort: 80
-#      serviceAccountName: jenkins
+      imagePullSecrets:
+      - name: regcred
 ---
 apiVersion: v1
 kind: Service
