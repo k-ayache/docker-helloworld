@@ -75,6 +75,7 @@ pipeline {
       steps {
         container('docker') {        
           sh """
+           echo this is a second branch
            ip=\$(kubectl get svc helloworld --namespace=${namespace} -o json | jq -r .status.loadBalancer.ingress[0].hostname)
            while [ "\$(curl --insecure -s -o /dev/null -w "%{http_code}" \$ip)" != "200" ]; do sleep 3; done
           """
