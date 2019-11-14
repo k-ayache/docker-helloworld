@@ -40,12 +40,6 @@ pipeline {
     }
   }
   stages {
-    stage('git clone') {
-      steps {
-        container('docker') {
-          git 'https://github.com/k-ayache/docker-helloworld.git'
-        }
-    }  }    
     stage('build') {
       steps {
         container('docker') { 
