@@ -49,7 +49,7 @@ pipeline {
     stage('build') {
       steps {
         container('docker') { 
-          sh("echo yesssssssssssss")
+          sh("echo yesssssssss")
           sh("#docker build --network=host -t $DOCKER_USR/${projectName}:nginx-1 .")
         }
       }
